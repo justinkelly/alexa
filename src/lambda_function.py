@@ -107,16 +107,12 @@ def get_trove_query(intent, session):
     session_attributes = {}
     should_end_session = True
  
-
-
     word_site = "https://raw.githubusercontent.com/paritytech/wordlist/master/res/wordlist.txt"
 
     response = requests.get(word_site)
     WORDS = response.content.splitlines()
     searchquery = random.choice(WORDS)
 
-    
-    apikey='f2shgp97vv0ab8os'
     trove_api_key = os.environ['TROVE_API_KEY']
     troveURL = 'http://api.trove.nla.gov.au/'
 
